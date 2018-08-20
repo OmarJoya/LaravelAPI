@@ -17,8 +17,8 @@ class ArticleResource extends JsonResource
         //return parent::toArray($request);
         return [
             'name' => $this->name,
-            'description' => $this.description,
-            'price' => $this.price
+            'description' => $this->description,
+            'price' => $this->price
         ];
     }
 }
