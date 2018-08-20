@@ -63,7 +63,6 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        return "something";
         return new ArticleResource($article);
     }
 
@@ -76,7 +75,10 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $article->update($request->all());
+        return response([
+            'date'=>new ArticleResource($article)
+        ],Response::HTTP_CREATED);
     }
 
     /**
